@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historias Wolf</title>
+<style>
+  :root{
+    --cream:#F6F1E4; --ink:#141414; --yellow:#FFCE00; --yellow-soft:#FFE680;
+    --muted:#6b665c; --line:#141414;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#888;font-family:"Inter Display","Inter",sans-serif;color:var(--ink)}
+  .story{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--cream);margin:0 0 40px}
+  .mono{font-family:"JetBrains Mono",monospace;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+  .top{position:absolute;top:110px;left:72px;right:72px;display:flex;justify-content:space-between;font-size:30px;line-height:1.35}
+  .top .r{text-align:right}
+  .wolf{display:inline-flex;align-items:center;gap:14px}
+  .dot{width:22px;height:22px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink)}
+
+  /* photo frame */
+  .frame{position:absolute;left:60px;right:60px;top:250px;height:890px;border-radius:40px;overflow:hidden;border:4px solid var(--ink)}
+  .frame img{width:100%;height:100%;object-fit:cover;display:block}
+  .chip{position:absolute;padding:16px 28px;border:3px solid var(--ink);border-radius:16px;font-size:32px;background:var(--yellow);font-family:"JetBrains Mono",monospace;font-weight:700;letter-spacing:.03em}
+  .chip.dark{background:var(--ink);color:var(--yellow)}
+  .chip.light{background:var(--cream)}
+
+  .head{position:absolute;left:72px;right:72px;top:1190px}
+  .head h1{font-weight:800;font-size:124px;line-height:.98;letter-spacing:-.035em}
+  .head h1 .ln{display:block;border-bottom:3px solid var(--line);padding-bottom:12px;margin-bottom:12px;width:max-content;max-width:100%}
+  .hl{background:var(--yellow);padding:0 14px;margin-left:-14px;box-decoration-break:clone}
+  .sub{font-size:44px;line-height:1.25;font-weight:500;letter-spacing:-.01em;margin-top:26px}
+  .feats{position:absolute;left:72px;right:72px;bottom:215px;display:flex;flex-wrap:wrap;gap:14px}
+  .feats span{font-size:27px;padding:12px 20px;border:2.5px solid var(--ink);border-radius:999px}
+  .cta{position:absolute;left:72px;right:72px;bottom:100px;display:flex;justify-content:space-between;align-items:center;font-size:30px}
+  .cta .pill{background:var(--ink);color:var(--yellow);padding:20px 34px;border-radius:999px;font-size:32px;font-weight:700}
+
+  /* notes card (ref style) */
+  .note{position:absolute;background:#fff;border-radius:34px;padding:34px 46px 44px;box-shadow:0 18px 50px rgba(0,0,0,.18);font-family:"Inter",sans-serif}
+  .note .bar{display:flex;align-items:center;justify-content:space-between;color:#E0A800;font-size:34px;margin-bottom:26px}
+  .note .bar .icons{display:flex;gap:30px;font-size:34px}
+  .note h3{font-size:58px;font-weight:700;letter-spacing:-.02em;color:#3a3a3a;margin-bottom:22px}
+  .note p{font-size:38px;line-height:1.45;color:#3a3a3a}
+  .note mark{background:#FFF1C2;color:#C98A00;padding:0 6px;border-radius:6px}
+
+  /* cover */
+  .cover-title{position:absolute;left:72px;right:72px;top:270px}
+  .cover-title .kick{font-size:32px;margin-bottom:30px}
+  .cover-title h1{font-size:180px;font-weight:800;line-height:.9;letter-spacing:-.05em}
+  .cards{position:absolute;left:0;right:0;top:700px;height:600px}
+  .card{position:absolute;width:370px;height:470px;border-radius:30px;overflow:hidden;border:4px solid var(--ink);box-shadow:0 20px 40px rgba(0,0,0,.18)}
+  .card img{width:100%;height:100%;object-fit:cover}
+  .stack{position:absolute;left:72px;right:72px;bottom:210px}
+  .stack div{font-size:78px;font-weight:600;letter-spacing:-.035em;line-height:1.08;border-bottom:3px solid var(--line);padding:8px 0 10px;width:max-content}
+  .stack b{font-weight:800}
+
+  /* closing */
+  .yellow{background:var(--yellow)}
+  .big-q{position:absolute;left:72px;right:72px;top:270px;font-size:165px;font-weight:800;letter-spacing:-.05em;line-height:1.06}
+  .big-q .w{background:var(--ink);color:var(--yellow);padding:0 18px;margin-left:-6px}
+  .poll-space{position:absolute;left:140px;right:140px;top:1030px;height:250px;border:4px dashed rgba(20,20,20,.45);border-radius:36px;display:flex;align-items:center;justify-content:center;font-size:28px;color:rgba(20,20,20,.55)}
+  .arrow{font-family:"Inter";font-weight:400}
+</style>
+</head>
+<body>
+
+<!-- 01 PORTADA -->
+<section class="story" id="s1">
+  <div class="top mono">
+    <div>Nuevos<br>ingresos</div>
+    <div class="r wolf"><span>Suplementos<br>Wolf</span><span class="dot"></span></div>
+  </div>
+  <div class="cover-title">
+    <div class="kick mono">Recién llegados al local</div>
+    <h1>Llegó<br><span class="hl">lo nuevo</span></h1>
+  </div>
+  <div class="cards">
+    <div class="card" style="left:40px;top:70px;transform:rotate(-7deg)"><img src="img/limon.jpg" style="object-position:50% 62%"></div>
+    <div class="card" style="left:350px;top:20px;transform:rotate(2deg);z-index:2"><img src="img/creatina2.jpg" style="object-position:50% 62%"></div>
+    <div class="card" style="left:660px;top:80px;transform:rotate(8deg)"><img src="img/jamon.jpg" style="object-position:50% 60%"></div>
+    <div class="chip" style="left:90px;top:520px;transform:rotate(-4deg);z-index:3">EDICIÓN LIMITADA</div>
+    <div class="chip dark" style="left:640px;top:520px;transform:rotate(4deg);z-index:3">NUEVO</div>
+  </div>
+  <div class="stack">
+    <div><b>1</b> creatina</div>
+    <div><b>2</b> pancakes proteicos</div>
+    <div><b>1</b> dulce, <b>1</b> salado</div>
+  </div>
+  <div class="cta mono"><span>Tocá para ver →</span><span>01/05</span></div>
+</section>
+
+<!-- 02 CREATINA -->
+<section class="story" id="s2">
+  <div class="top mono">
+    <div>Nuevo ingreso<br>01/03</div>
+    <div class="r wolf"><span>Suplementos<br>Wolf</span><span class="dot"></span></div>
+  </div>
+  <div class="frame"><img src="img/creatina1.jpg" style="object-position:50% 70%"></div>
+  <div class="chip" style="right:100px;top:300px;transform:rotate(4deg)">5 g POR SERVICIO</div>
+  <div class="chip dark" style="left:100px;top:1045px;transform:rotate(-3deg)">60 SERV · 300 g</div>
+  <div class="head">
+    <h1><span class="ln">Creatina</span><span class="ln"><span class="hl">monohidrato</span></span></h1>
+    <p class="sub">Star Nutrition · Ultramicronizada · Sabor uva</p>
+  </div>
+  <div class="feats mono"><span>Libre de gluten</span><span>Ultramicronizada</span><span>Sabor uva</span></div>
+  <div class="cta mono"><span>Consultá stock</span><span class="pill">PEDILA POR DM →</span></div>
+</section>
+
+<!-- 03 PANCAKES LIMÓN -->
+<section class="story" id="s3">
+  <div class="top mono">
+    <div>Nuevo ingreso<br>02/03</div>
+    <div class="r wolf"><span>Suplementos<br>Wolf</span><span class="dot"></span></div>
+  </div>
+  <div class="frame"><img src="img/limon.jpg" style="object-position:50% 62%"></div>
+  <div class="chip" style="right:100px;top:300px;transform:rotate(4deg)">EDICIÓN LIMITADA</div>
+  <div class="chip dark" style="left:100px;top:1045px;transform:rotate(-3deg)">15 g PROTEÍNA / PORCIÓN</div>
+  <div class="head">
+    <h1><span class="ln">Pancakes</span><span class="ln">sabor <span class="hl">limón</span></span></h1>
+    <p class="sub">Granger Foods · Listos en 3 minutos</p>
+  </div>
+  <div class="feats mono"><span>Sin gluten</span><span>Sin azúcar agregada</span><span>Rinde 12</span></div>
+  <div class="cta mono"><span>Dulce · 300 g</span><span class="pill">PEDILOS POR DM →</span></div>
+</section>
+
+<!-- 04 PANCAKES JAMÓN SERRANO -->
+<section class="story" id="s4">
+  <div class="top mono">
+    <div>Nuevo ingreso<br>03/03</div>
+    <div class="r wolf"><span>Suplementos<br>Wolf</span><span class="dot"></span></div>
+  </div>
+  <div class="frame"><img src="img/jamon.jpg" style="object-position:50% 60%"></div>
+  <div class="chip" style="right:100px;top:300px;transform:rotate(4deg)">EDICIÓN LIMITADA</div>
+  <div class="chip dark" style="left:100px;top:1045px;transform:rotate(-3deg)">12 g PROTEÍNA / PORCIÓN</div>
+  <div class="head">
+    <h1><span class="ln">Pancakes</span><span class="ln"><span class="hl">salados</span></span></h1>
+    <p class="sub">Granger Foods · Sabor jamón serrano</p>
+  </div>
+  <div class="feats mono"><span>Sin gluten</span><span>Listos en 3'</span><span>Rinde 12</span></div>
+  <div class="cta mono"><span>Salado · 300 g</span><span class="pill">PEDILOS POR DM →</span></div>
+</section>
+
+<!-- 05 CIERRE -->
+<section class="story yellow" id="s5">
+  <div class="top mono">
+    <div>Nuevos<br>ingresos</div>
+    <div class="r wolf"><span>Suplementos<br>Wolf</span><span class="dot" style="background:var(--cream)"></span></div>
+  </div>
+  <div class="big-q">¿Team<br><span class="w">dulce</span><br>o team<br><span class="w">salado?</span></div>
+  <div class="poll-space mono">Espacio para sticker de encuesta</div>
+  <div class="note" style="left:90px;right:90px;top:1340px">
+    <div class="bar"><span>‹ Notas</span><span class="icons">↶ ⇪ ⋯</span></div>
+    <h3>Ya están en el local</h3>
+    <p>Creatina + pancakes proteicos dulces y salados. <mark>Escribinos por DM</mark> y te los separamos.</p>
+  </div>
+  <div class="cta mono" style="bottom:90px"><span>Stock limitado</span><span>05/05</span></div>
+</section>
+
+</body>
+</html>
