@@ -11,151 +11,117 @@
   body{background:#777;font-family:"Montserrat",sans-serif}
   .story{width:1080px;height:1920px;position:relative;overflow:hidden;background:#2b2a28;margin:0 0 40px;color:var(--white)}
 
-  /* fondo: misma foto, desenfocada y oscurecida */
-  .bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(26px) brightness(.42) saturate(.9)}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.55) 0%,rgba(20,20,20,.1) 40%,rgba(20,20,20,.15) 70%,rgba(80,85,40,.55) 100%)}
+  /* foto completa, nítida */
+  .full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,
+      rgba(15,15,15,.85) 0%, rgba(15,15,15,.6) 18%, rgba(15,15,15,0) 30%,
+      rgba(15,15,15,0) 66%, rgba(15,15,15,.6) 80%, rgba(15,15,15,.85) 100%)}
 
   /* cintas */
   .tape{position:absolute;left:-200px;width:1500px;height:96px;background:var(--lime);color:var(--ink);
         font-weight:800;font-size:46px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;
-        box-shadow:0 10px 26px rgba(0,0,0,.35)}
+        box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:6}
   .tape span{padding-right:34px}
 
-  .h1{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.35)}
-  .sub{position:absolute;left:60px;right:60px;text-align:center;font-weight:300;font-size:50px;letter-spacing:-.01em}
-  .box{position:absolute;left:50%;background:var(--lime);color:var(--ink);border-radius:30px;padding:28px 44px;font-weight:800;text-transform:uppercase;text-align:center;line-height:1.05;letter-spacing:-.01em;box-shadow:0 14px 34px rgba(0,0,0,.35);z-index:5;white-space:nowrap}
-
-  .photo{position:absolute;border-radius:38px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55);z-index:3}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .h1{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.5);z-index:5}
+  .sub{position:absolute;left:60px;right:60px;text-align:center;font-weight:400;font-size:48px;letter-spacing:-.01em;text-shadow:0 3px 18px rgba(0,0,0,.6);z-index:5}
+  .box{position:absolute;left:50%;background:var(--lime);color:var(--ink);border-radius:30px;padding:28px 44px;font-weight:800;text-transform:uppercase;text-align:center;line-height:1.05;letter-spacing:-.01em;box-shadow:0 14px 34px rgba(0,0,0,.4);z-index:5;white-space:nowrap}
 
   .scribble{position:absolute;z-index:4;pointer-events:none}
   .scribble path{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round}
 
   .pills{position:absolute;left:40px;right:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;z-index:5}
-  .pills span{border:3px solid var(--lime);color:var(--lime);border-radius:999px;padding:12px 26px;font-weight:700;font-size:30px;text-transform:uppercase;background:rgba(20,20,20,.35)}
-  .foot{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;font-size:58px;text-transform:uppercase;letter-spacing:-.02em;z-index:5;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+  .pills span{border:3px solid var(--lime);color:var(--lime);border-radius:999px;padding:12px 26px;font-weight:700;font-size:30px;text-transform:uppercase;background:rgba(20,20,20,.55)}
+  .foot{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;font-size:56px;text-transform:uppercase;letter-spacing:-.02em;z-index:5;text-shadow:0 4px 20px rgba(0,0,0,.5)}
 
-  .poll{position:absolute;left:150px;right:150px;height:250px;border:4px dashed rgba(255,255,255,.55);border-radius:34px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:28px;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .half{position:absolute;top:0;bottom:0;width:540px;overflow:hidden}
+  .half img{position:absolute;top:0;height:100%;width:auto}
+  .divider{position:absolute;top:420px;bottom:560px;left:536px;width:8px;background:var(--lime);z-index:4;transform:skewX(-4deg)}
+  .poll{position:absolute;left:150px;right:150px;height:230px;border:4px dashed rgba(255,255,255,.75);border-radius:34px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:28px;color:#fff;text-transform:uppercase;background:rgba(20,20,20,.35);z-index:5}
 </style>
 </head>
 <body>
 
 <!-- ============ 01 PORTADA ============ -->
 <section class="story" id="s1">
-  <div class="bg" style="background-image:url(img/creatina2.jpg)"></div><div class="shade"></div>
+  <img class="full" src="img/creatina2.jpg" style="object-position:50% 70%"><div class="shade"></div>
 
-  <div class="tape" style="top:70px;transform:rotate(6deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
-  <div class="tape" style="top:150px;transform:rotate(-5deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="tape" style="top:15px;transform:rotate(6deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(-5deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
 
-  <div class="h1" style="top:360px;font-size:104px">¡Llegaron<br>nuevos<br>ingresos!</div>
+  <div class="h1" style="top:245px;font-size:76px">¡Llegaron<br>nuevos ingresos!</div>
 
-  <div class="photo" style="left:40px;top:780px;width:390px;height:520px;transform:rotate(-8deg)"><img src="img/limon.jpg" style="object-position:50% 62%"></div>
-  <div class="photo" style="left:650px;top:800px;width:390px;height:520px;transform:rotate(8deg)"><img src="img/jamon.jpg" style="object-position:50% 60%"></div>
-  <div class="photo" style="left:330px;top:740px;width:420px;height:580px;transform:rotate(1deg);z-index:4"><img src="img/creatina2.jpg" style="object-position:50% 62%"></div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(-2deg);font-size:52px">Creatina +<br>pancakes proteicos</div>
+  <div class="foot" style="top:1640px;font-size:48px">Tocá para conocerlos →</div>
 
-  <svg class="scribble" style="left:0;top:600px" width="1080" height="900" viewBox="0 0 1080 900">
-    <path d="M60 140 C 220 60, 420 70, 520 120"/>
-    <path d="M1030 760 C 960 840, 820 880, 700 860"/>
-  </svg>
-
-  <div class="box" style="top:1290px;transform:translateX(-50%) rotate(-2deg);font-size:54px">Creatina +<br>pancakes proteicos</div>
-  <div class="foot" style="top:1520px">Tocá para conocerlos →</div>
-
-  <div class="tape" style="top:1690px;transform:rotate(-6deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
-  <div class="tape" style="top:1790px;transform:rotate(4deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="tape" style="top:1770px;transform:rotate(-5deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
 </section>
 
 <!-- ============ 02 CREATINA ============ -->
 <section class="story" id="s2">
-  <div class="bg" style="background-image:url(img/creatina1.jpg)"></div><div class="shade"></div>
+  <img class="full" src="img/creatina1.jpg" style="object-position:50% 75%"><div class="shade"></div>
 
-  <div class="tape" style="top:60px;transform:rotate(-5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
-  <div class="tape" style="top:140px;transform:rotate(5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:15px;transform:rotate(-5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
 
-  <div class="h1" style="top:330px;font-size:86px">Creatina<br>monohidrato</div>
-  <div class="sub" style="top:525px">Star Nutrition · 300 g</div>
+  <div class="h1" style="top:240px;font-size:74px">Creatina<br>monohidrato</div>
+  <div class="sub" style="top:405px;font-size:42px">Star Nutrition · 300 g</div>
 
-  <div class="photo" style="left:170px;top:700px;width:740px;height:880px;transform:rotate(2.5deg)"><img src="img/creatina1.jpg" style="object-position:50% 70%"></div>
-  <div class="box" style="top:640px;transform:translateX(-50%) rotate(-2deg);font-size:54px">5 g por servicio<br>60 servicios</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(-2deg);font-size:52px">5 g por servicio<br>60 servicios</div>
+  <div class="pills" style="top:1640px"><span>Ultramicronizada</span><span>Sabor uva</span><span>Sin gluten</span></div>
 
-  <svg class="scribble" style="left:0;top:700px" width="1080" height="1000" viewBox="0 0 1080 1000">
-    <path d="M70 380 C 30 520, 60 700, 150 800"/>
-    <path d="M1010 120 C 1060 260, 1050 420, 960 520"/>
-  </svg>
-
-  <div class="pills" style="top:1610px"><span>Ultramicronizada</span><span>Sabor uva</span><span>Sin gluten</span></div>
-
-  <div class="tape" style="top:1735px;transform:rotate(-4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
-  <div class="tape" style="top:1825px;transform:rotate(5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
 </section>
 
 <!-- ============ 03 PANCAKES LIMÓN ============ -->
 <section class="story" id="s3">
-  <div class="bg" style="background-image:url(img/limon.jpg)"></div><div class="shade"></div>
+  <img class="full" src="img/limon.jpg" style="object-position:50% 70%"><div class="shade"></div>
 
-  <div class="tape" style="top:60px;transform:rotate(5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
-  <div class="tape" style="top:150px;transform:rotate(-4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:15px;transform:rotate(5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
+  <div class="tape" style="top:95px;transform:rotate(-4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
 
-  <div class="h1" style="top:330px;font-size:86px">Pancakes<br>proteicos</div>
-  <div class="sub" style="top:525px">Granger Foods · sabor limón</div>
+  <div class="h1" style="top:240px;font-size:74px">Pancakes<br>proteicos</div>
+  <div class="sub" style="top:405px;font-size:42px">Granger Foods · sabor limón</div>
 
-  <div class="photo" style="left:170px;top:700px;width:740px;height:880px;transform:rotate(-2.5deg)"><img src="img/limon.jpg" style="object-position:50% 62%"></div>
-  <div class="box" style="top:640px;transform:translateX(-50%) rotate(2deg);font-size:54px">15 g de proteína<br>por porción</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(2deg);font-size:52px">15 g de proteína<br>por porción</div>
+  <div class="pills" style="top:1640px"><span>Sin gluten</span><span>Sin azúcar agregada</span><span>Listos en 3'</span></div>
 
-  <svg class="scribble" style="left:0;top:700px" width="1080" height="1000" viewBox="0 0 1080 1000">
-    <path d="M1015 380 C 1060 520, 1030 700, 930 800"/>
-    <path d="M60 140 C 20 260, 40 400, 130 500"/>
-  </svg>
-
-  <div class="pills" style="top:1610px"><span>Sin gluten</span><span>Sin azúcar agregada</span><span>Listos en 3'</span></div>
-
-  <div class="tape" style="top:1735px;transform:rotate(4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
-  <div class="tape" style="top:1825px;transform:rotate(-5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(-4deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
 </section>
 
 <!-- ============ 04 PANCAKES JAMÓN SERRANO ============ -->
 <section class="story" id="s4">
-  <div class="bg" style="background-image:url(img/jamon.jpg)"></div><div class="shade"></div>
+  <img class="full" src="img/jamon.jpg" style="object-position:50% 70%"><div class="shade"></div>
 
-  <div class="tape" style="top:60px;transform:rotate(-5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
-  <div class="tape" style="top:150px;transform:rotate(4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:15px;transform:rotate(-5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
+  <div class="tape" style="top:95px;transform:rotate(4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
 
-  <div class="h1" style="top:330px;font-size:86px">Pancakes<br>salados</div>
-  <div class="sub" style="top:525px">Granger Foods · jamón serrano</div>
+  <div class="h1" style="top:240px;font-size:74px">Pancakes<br>salados</div>
+  <div class="sub" style="top:405px;font-size:42px">Granger Foods · jamón serrano</div>
 
-  <div class="photo" style="left:170px;top:700px;width:740px;height:880px;transform:rotate(2.5deg)"><img src="img/jamon.jpg" style="object-position:50% 60%"></div>
-  <div class="box" style="top:640px;transform:translateX(-50%) rotate(-2deg);font-size:54px">12 g de proteína<br>por porción</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(-2deg);font-size:52px">12 g de proteína<br>por porción</div>
+  <div class="pills" style="top:1640px"><span>Sin gluten</span><span>Listos en 3'</span><span>Rinde 12</span></div>
 
-  <svg class="scribble" style="left:0;top:700px" width="1080" height="1000" viewBox="0 0 1080 1000">
-    <path d="M70 380 C 30 520, 60 700, 150 800"/>
-    <path d="M1010 120 C 1060 260, 1050 420, 960 520"/>
-  </svg>
-
-  <div class="pills" style="top:1610px"><span>Sin gluten</span><span>Listos en 3'</span><span>Rinde 12</span></div>
-
-  <div class="tape" style="top:1735px;transform:rotate(-4deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
-  <div class="tape" style="top:1825px;transform:rotate(5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(5deg)"><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span><span>EDICIÓN LIMITADA</span></div>
 </section>
 
 <!-- ============ 05 CIERRE ============ -->
 <section class="story" id="s5">
-  <div class="bg" style="background-image:url(img/limon.jpg);filter:blur(30px) brightness(.35)"></div><div class="shade"></div>
+  <div class="half" style="left:0"><img src="img/limon.jpg" style="left:-450px"></div>
+  <div class="half" style="left:540px"><img src="img/jamon.jpg" style="left:-455px"></div>
+  <div class="divider"></div>
+  <div class="shade"></div>
 
-  <div class="tape" style="top:70px;transform:rotate(6deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
-  <div class="tape" style="top:150px;transform:rotate(-5deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="tape" style="top:15px;transform:rotate(6deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(-5deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
 
-  <div class="h1" style="top:390px;font-size:96px">¿Vos sos<br>team…</div>
+  <div class="h1" style="top:250px;font-size:80px">¿Vos sos team…</div>
 
-  <div class="photo" style="left:70px;top:680px;width:430px;height:560px;transform:rotate(-6deg)"><img src="img/limon.jpg" style="object-position:50% 62%"></div>
-  <div class="photo" style="left:580px;top:680px;width:430px;height:560px;transform:rotate(6deg)"><img src="img/jamon.jpg" style="object-position:50% 60%"></div>
-  <div class="box" style="left:285px;top:1180px;transform:translateX(-50%) rotate(-4deg);font-size:64px">Dulce</div>
-  <div class="box" style="left:795px;top:1180px;transform:translateX(-50%) rotate(4deg);font-size:64px">Salado</div>
+  <div class="box" style="left:270px;top:1330px;transform:translateX(-50%) rotate(-4deg);font-size:62px">Dulce</div>
+  <div class="box" style="left:810px;top:1330px;transform:translateX(-50%) rotate(4deg);font-size:62px">Salado</div>
 
-  <div class="poll" style="top:1360px">Espacio para sticker de encuesta</div>
-
-  <div class="foot" style="top:1650px;font-size:50px">Pedilos por DM</div>
-
-  <div class="tape" style="top:1770px;transform:rotate(-4deg)"><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span><span>NUEVOS INGRESOS WOLF</span></div>
+  <div class="poll" style="top:1500px">Espacio para sticker de encuesta</div>
+  <div class="foot" style="top:1760px;font-size:48px">Pedilos por DM</div>
 </section>
 
 </body>
