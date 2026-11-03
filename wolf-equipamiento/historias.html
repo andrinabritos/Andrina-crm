@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Equipamiento Wolf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --lime:#EBFE57; --ink:#151515; --white:#FFFFFF; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#777;font-family:"Montserrat",sans-serif}
+  .story{width:1080px;height:1920px;position:relative;overflow:hidden;background:#2b2a28;margin:0 0 40px;color:var(--white)}
+
+  /* foto completa, nítida */
+  .full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,
+      rgba(15,15,15,.85) 0%, rgba(15,15,15,.6) 18%, rgba(15,15,15,0) 30%,
+      rgba(15,15,15,0) 66%, rgba(15,15,15,.6) 80%, rgba(15,15,15,.85) 100%)}
+
+  /* cintas */
+  .tape{position:absolute;left:-200px;width:1500px;height:96px;background:var(--lime);color:var(--ink);
+        font-weight:800;font-size:46px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;display:flex;align-items:center;
+        box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:6}
+  .tape span{padding-right:34px}
+
+  .h1{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.5);z-index:5}
+  .sub{position:absolute;left:60px;right:60px;text-align:center;font-weight:400;font-size:48px;letter-spacing:-.01em;text-shadow:0 3px 18px rgba(0,0,0,.6);z-index:5}
+  .box{position:absolute;left:50%;background:var(--lime);color:var(--ink);border-radius:30px;padding:28px 44px;font-weight:800;text-transform:uppercase;text-align:center;line-height:1.05;letter-spacing:-.01em;box-shadow:0 14px 34px rgba(0,0,0,.4);z-index:5;white-space:nowrap}
+
+  .scribble{position:absolute;z-index:4;pointer-events:none}
+  .scribble path{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round}
+
+  .pills{position:absolute;left:40px;right:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;z-index:5}
+  .pills span{border:3px solid var(--lime);color:var(--lime);border-radius:999px;padding:12px 26px;font-weight:700;font-size:30px;text-transform:uppercase;background:rgba(20,20,20,.55)}
+  .foot{position:absolute;left:60px;right:60px;text-align:center;font-weight:800;font-size:56px;text-transform:uppercase;letter-spacing:-.02em;z-index:5;text-shadow:0 4px 20px rgba(0,0,0,.5)}
+
+  .half{position:absolute;top:0;bottom:0;width:540px;overflow:hidden}
+  .half img{position:absolute;top:0;height:100%;width:auto}
+  .divider{position:absolute;top:420px;bottom:560px;left:536px;width:8px;background:var(--lime);z-index:4;transform:skewX(-4deg)}
+  .poll{position:absolute;left:150px;right:150px;height:230px;border:4px dashed rgba(255,255,255,.75);border-radius:34px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:28px;color:#fff;text-transform:uppercase;background:rgba(20,20,20,.35);z-index:5}
+  .kicker{position:absolute;left:60px;right:60px;text-align:center;font-weight:600;font-size:36px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 3px 18px rgba(0,0,0,.6);z-index:5}
+  .flavor{position:absolute;left:30px;right:30px;text-align:center;font-weight:900;text-transform:uppercase;letter-spacing:-.035em;line-height:.95;color:var(--lime);text-shadow:0 6px 30px rgba(0,0,0,.55);z-index:5}
+  .flavor small{display:block;font-size:.42em;color:#fff;letter-spacing:.02em;font-weight:800;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<section class="story" id="s1" style="background:#2b2a28">
+  <img class="full" src="img/hierro.jpg" style="object-position:15% 50%"><div class="shade"></div>
+  <div class="tape" style="top:15px;transform:rotate(-5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(4deg)"><span>MANCUERNAS WOLF</span><span>MANCUERNAS WOLF</span><span>MANCUERNAS WOLF</span><span>MANCUERNAS WOLF</span><span>MANCUERNAS WOLF</span></div>
+  <div class="kicker" style="top:235px">Nuevo ingreso · Equipamiento</div>
+  <div class="flavor" style="top:290px;font-size:130px"><small>Mancuernas</small>De hierro</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(-2deg);font-size:52px">Hexagonales<br>de hierro fundido</div>
+  <div class="pills" style="top:1640px"><span>No ruedan</span><span>Agarre firme</span><span>Casa o gym</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(5deg)"><span>MANCUERNAS DE HIERRO</span><span>MANCUERNAS DE HIERRO</span><span>MANCUERNAS DE HIERRO</span><span>MANCUERNAS DE HIERRO</span><span>MANCUERNAS DE HIERRO</span></div>
+</section>
+<section class="story" id="s2" style="background:#2b2a28">
+  <img class="full" src="img/goma.jpg" style="object-position:50% 50%"><div class="shade"></div>
+  <div class="tape" style="top:15px;transform:rotate(5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(-4deg)"><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span></div>
+  <div class="kicker" style="top:235px">Mancuernas recubiertas en goma</div>
+  <div class="flavor" style="top:290px;font-size:150px"><small>Nuevo ingreso</small>2 a 10 kg</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(2deg);font-size:52px">Mancuernas<br>de goma</div>
+  <div class="pills" style="top:1640px"><span>Hexagonales</span><span>Cuidan el piso</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(-4deg)"><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span><span>DE 2 A 10 KG</span></div>
+</section>
+<section class="story" id="s3" style="background:#e6e6e4">
+  <img src="img/chaleco.jpg" style="position:absolute;left:0;top:230px;width:1080px;height:1920px;object-fit:cover"><div class="shade"></div>
+  <div class="tape" style="top:15px;transform:rotate(-5deg)"><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span><span>NUEVO INGRESO WOLF</span></div>
+  <div class="tape" style="top:95px;transform:rotate(4deg)"><span>CHALECO DE LASTRE</span><span>CHALECO DE LASTRE</span><span>CHALECO DE LASTRE</span><span>CHALECO DE LASTRE</span><span>CHALECO DE LASTRE</span></div>
+  <div class="kicker" style="top:235px">Chaleco de lastre · Big Company</div>
+  <div class="flavor" style="top:290px;font-size:190px"><small>Nuevo ingreso</small>20 kg</div>
+  <div class="box" style="top:1420px;transform:translateX(-50%) rotate(-2deg);font-size:52px">Sumale peso<br>a tu entrenamiento</div>
+  <div class="pills" style="top:1640px"><span>Correas regulables</span><span>Funcional</span><span>Calistenia</span></div>
+  <div class="tape" style="top:1780px;transform:rotate(5deg)"><span>CHALECO DE LASTRE 20 KG</span><span>CHALECO DE LASTRE 20 KG</span><span>CHALECO DE LASTRE 20 KG</span><span>CHALECO DE LASTRE 20 KG</span><span>CHALECO DE LASTRE 20 KG</span></div>
+</section>
+</body>
+</html>
